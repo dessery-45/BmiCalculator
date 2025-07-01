@@ -3,6 +3,12 @@ import java.util.Scanner;
 import java.io.Console;
 import java.util.Locale;
 
+// I Dessery Lefopane created this BMI Calculator.
+// This BMI calculator is a program that takes a person's age, sex, ethnicity, height, and weight as input,
+// calculates their Body Mass Index (BMI) using the formula BMI = weight / (height * height),
+// and then categorizes the result (e.g., underweight, normal, overweight, or obese).
+// It outputs a summary statement combining the user's details with their BMI value and category,
+// helping users understand whether their weight is healthy for their height.
 
 public class Bmicalculator {
 
@@ -39,7 +45,7 @@ public class Bmicalculator {
             double height = (unitChoice == 1) ? getValidInput(scanner, "Enter your height in meters : ", 0.5, 10.5)
                     : getValidInput(scanner, "Enter your height in inches", 20, 100);
 
-
+            // Example user input variables
             System.out.print("Enter your age: ");
             int age = scanner.nextInt();
             scanner.nextLine();
@@ -51,10 +57,10 @@ public class Bmicalculator {
             String ethnicity = scanner.nextLine().toLowerCase();
 
             double bmi = calculateBMI(unitChoice, weight, height);
+            // Output the result with user details and BMI category
             System.out.println ("Your are a "+ ethnicity + " " + sex + " with "+ age + " years of age and your BMI is" + " "  + bmi+" "+displayCategory(bmi));
             repeat=askToRepeat(scanner);
-            //repeat = askToRepeat(scanner);
-
+    
 
         } while (repeat == 'Y' || repeat == 'y');
     }}
@@ -112,6 +118,7 @@ public class Bmicalculator {
         }
         return totalBMI;
     }
+    // Method to determine BMI category based on BMI value
     public static String displayCategory(double bmi) {
 
 
